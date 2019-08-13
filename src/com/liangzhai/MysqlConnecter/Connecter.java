@@ -15,6 +15,7 @@ import java.util.Properties;
  * @create: 2019-08-13 11:34
  **/
 public class Connecter {
+
     //获取数据库连接
     public static Connection getConnection(){
         try {
@@ -38,4 +39,12 @@ public class Connecter {
         return null;
     }
 
+    //关闭数据库连接
+    public static void closeConnection(Connection connection){
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
